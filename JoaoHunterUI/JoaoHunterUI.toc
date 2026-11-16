@@ -2,7 +2,7 @@
 ## Title: CouchMaster Forever
 ## Notes: UI de controle para cacador no layout hihi. Glifos persistentes e legendas fixas opcionais. /cmf
 ## Author: Joao
-## Version: 2.1.5
+## Version: 2.1.6
 ## OptionalDeps: Blizzard_GamepadActionBars
 ## SavedVariables: JoaoHunterUIDB
 JoaoHunterUI.lua

@@ -23,10 +23,10 @@ Alguns 8BitDo trazem letras em outra disposição física ou são apresentados a
 | Combinação | Papel no perfil | O que lembrar |
 |---|---|---|
 | LT + X | Abrir combate | Pet primeiro; o macro marca o alvo e prepara o início da luta. |
-| RT + X | Reduzir movimento | Concussão ajuda a ganhar distância. |
+| RT + X | Reduzir movimento | Investida do javali + tentativas de Concussão/Cortar Asas, sem reaplicar Marca. |
 | RT + Y | Dano ao longo do tempo | Picada continua causando dano; evite reaplicar a cada toque sem necessidade. |
 | RT + B | Ataque à distância com opção de Raptor no mesmo macro | O ícone principal permanece Tiro Arcano. |
-| RT + A | Corpo a corpo | Raptor é uma alternativa quando o inimigo encosta. |
+| RT + A | Corpo a corpo | Tenta Cortar Asas antes de Raptor para ajudar a abrir distância. |
 | LT + → | Recolher o pet | Passivo + seguir e interrupção do seu ataque. |
 | RT + ↑ | Chamar/reviver | Não é o comando de dispensar o pet. |
 | LB + LT | Acesso nativo aos comandos do ajudante | O retrato do pet indica o acesso; leia o painel que abrir. |

@@ -1,0 +1,6 @@
+#showtooltip Golpe do Raptor
+/petattack [harm,nodead]
+/cast [harm,nodead] Cortar Asas
+/startattack [harm,nodead]
+/cast [harm,nodead] !Golpe do Raptor
+/cast [harm,nodead] !Tiro Automático

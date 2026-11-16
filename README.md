@@ -6,11 +6,13 @@ Botões fáceis de reconhecer, habilidades próximas da borda inferior e mais es
 
 ![Interface original com as barras do controle, RestedXP à esquerda e Questie à direita](docs/images/ui-em-jogo.jpg)
 
-> **Versão 2.1.5 · WoW Forever · Interface 16001 · Caçador · Português do Brasil**
+> **Patch 0.1 · WoW Forever · Interface 16001 · Caçador · Português do Brasil**
 >
 > A imagem mostra a configuração original em jogo. Os painéis de missões, rotas e bolsas pertencem aos addons opcionais citados no guia; eles são instalados separadamente.
 
-**[Baixar CouchMaster Forever 2.1.5 — addon, layout e guias](https://github.com/silvamarcello1-art/CouchMaster-Forever/raw/refs/heads/main/downloads/CouchMaster-Forever-v2.1.5.zip)**
+**[Baixar CouchMaster Forever — Patch 0.1](https://github.com/silvamarcello1-art/CouchMaster-Forever/raw/refs/heads/main/downloads/CouchMaster-Forever-Patch-0.1.zip)**
+
+[Veja o que mudou no Patch 0.1](patches/PATCH-0.1.md) · [Histórico de patches](patches/README.md)
 
 ## Comece por aqui
 
@@ -41,10 +43,10 @@ A posição dos quadros de vida, mana, alvo, medidor de dano e demais elementos 
 | Controle | Macro | Uso |
 |---|---|---|
 | LT + X | HX Abrir | Enviar o pet, marcar o inimigo e iniciar o ataque; outro toque avança para a lentidão. |
-| RT + X | HX Lento | Tiro de Concussão, pet e tiro automático. |
+| RT + X | HX Lento | Investida do javali, Tiro de Concussão e Cortar Asas, com pet e tiro automático. |
 | RT + Y | HX Picada | Picada de Serpente, pet e tiro automático. |
 | RT + B | HX Arcano | Tiro Arcano e tentativa de preparar Golpe do Raptor no mesmo botão. |
-| RT + A | HX Corpo | Golpe do Raptor e ataque básico. |
+| RT + A | HX Corpo | Cortar Asas antes de Golpe do Raptor, com pet e ataque básico. |
 | LT + → | HX Recuar | Parar o seu ataque, colocar o pet em passivo e fazê-lo seguir. |
 | RT + ↑ | HX Chamar | Chamar ou tentar reviver o ajudante conforme a condição do pet. |
 
@@ -58,7 +60,14 @@ A posição dos quadros de vida, mana, alvo, medidor de dano e demais elementos 
 - [Todos os macros: código, funcionamento e limites](docs/MACROS.md)
 - [Addons recomendados e configuração de uma tela organizada](docs/ADDONS.md)
 - [Problemas frequentes, atualização e restauração](docs/SOLUCAO-DE-PROBLEMAS.md)
+- [Patches: novidades, correções e instruções de atualização](patches/README.md)
 - [Histórico da versão e verificações](CHANGELOG.md)
+
+## Atualizações conforme a experiência em jogo
+
+Cada patch tem uma página própria, com as mudanças, os botões afetados, a classe atendida, as instruções de aplicação e o que foi verificado. A página inicial aponta para o pacote atual; as notas anteriores permanecem no [histórico de patches](patches/README.md).
+
+O [Patch 0.1](patches/PATCH-0.1.md) reúne as adições de Cortar Asas e da Investida do javali. **Esses macros são para Hunter; jogadores de outras classes precisam personalizar seus próprios macros.** O suporte visual do addon continua restrito a caçadores no layout `hihi`.
 
 ## Como o recurso visual funciona
 

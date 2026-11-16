@@ -75,10 +75,10 @@ end
 -- They describe the saved macro; no cooldown, range, target or power is inspected.
 local macroLegends, pendingLegends = {}, false
 local legendProfiles = {
-    ["HX Lento"] = {primary = "Tiro de Concussão", spells = {"Tiro de Concussão", "Tiro Automático"}, pet = true},
+    ["HX Lento"] = {primary = "Tiro de Concussão", spells = {"Investida", "Tiro de Concussão", "Cortar Asas", "Tiro Automático"}, pet = true},
     ["HX Picada"] = {primary = "Picada de Serpente", spells = {"Picada de Serpente", "Tiro Automático"}, pet = true},
     ["HX Arcano"] = {primary = "Tiro Arcano", spells = {"Tiro Arcano", "Golpe do Raptor", "Tiro Automático"}, pet = true},
-    ["HX Corpo"] = {primary = "Golpe do Raptor", spells = {"Golpe do Raptor", "Tiro Automático"}, pet = true},
+    ["HX Corpo"] = {primary = "Golpe do Raptor", spells = {"Cortar Asas", "Golpe do Raptor", "Tiro Automático"}, pet = true},
 }
 local function HideMacroLegends()
     for _, legend in ipairs(macroLegends) do
@@ -149,7 +149,7 @@ local function PrepareMacroLegends(page)
             local button = group["ActionButton" .. i]
             if button then
                 local legend = {button = button, key = key, items = {}}
-                for j = 1, 3 do
+                for j = 1, (key == "RT+X" and 4 or 3) do
                     local border = button:CreateTexture(nil, "OVERLAY", nil, 3)
                     border:SetSize(13, 13)
                     border:SetColorTexture(0.08, 0.08, 0.08, 1)
@@ -301,4 +301,4 @@ addon:SetScript("OnEvent", function(_, event, unit, action)
     C_Timer.After(0, Apply)
 end)
 C_Timer.After(0, Apply)
-_G.JoaoHunterUI = {Apply = Apply, version = "2.1.5"}
+_G.JoaoHunterUI = {Apply = Apply, version = "2.1.6"}

@@ -39,6 +39,17 @@ function InCombatLockdown() return state.combat end
 function hooksecurefunc() end
 function SetPortraitTexture() end
 function strtrim(s) return s:match("^%s*(.-)%s*$") end
+local testMacroNames = {[197] = "HX Lento", [200] = "HX Corpo"}
+function GetActionText(action) return testMacroNames[action] end
+function GetMacroIndexByName(name)
+    if name == "HX Lento" then return 1 elseif name == "HX Corpo" then return 2 end
+    return 0
+end
+function GetMacroBody(index)
+    assert(CouchMasterTestMacros, "Load the macro text fixtures before running the tests")
+    return CouchMasterTestMacros[index == 1 and "HX Lento" or "HX Corpo"]
+end
+C_Spell = {GetSpellTexture = function() return 1 end}
 C_Timer = {After = function(_, fn) state.after[#state.after + 1] = fn end}
 EditModeManagerFrame = {GetActiveLayoutInfo = function()
     return state.layout and {layoutName = state.layout} or nil
@@ -69,6 +80,8 @@ for _, side in ipairs({"Left", "Right"}) do
     end
 end
 GamepadMainActionBarFrame = {PageUnit = page}
+page.actionBars.rightBar.Right.ActionButton1.action = 197
+page.actionBars.rightBar.Right.ActionButton4.action = 200
 
 -- The runner loads the unmodified release file here, then calls these checks.
 function RunCouchMasterTests()
@@ -78,6 +91,14 @@ function RunCouchMasterTests()
     assert(page.actionBars.rightBar.actionButtons[5].Name.alpha == 0, "Macro labels must be hidden")
     assert(page.actionBars.rightBar.actionButtons[5].ButtonIcon.shown, "Controller glyphs must stay visible")
     assert(page.actionBars.bottomBar.points[5] == 22, "Center offset must match the shared design")
+    SlashCmdList.JOAOHUNTERUI("on")
+    assert(JoaoHunterUIDB.showMacroLegends == true, "Legends must enable on request")
+    local slow = JoaoHunterUIDB.macroLegends["RT+X"]
+    assert(slow and #slow.labels == 4, "The updated RT+X macro must display all four secondary legends")
+    assert(slow.labels[2] == "Investida" and slow.labels[3] == "Cortar Asas", "RT+X legends must match the updated macro")
+    local melee = JoaoHunterUIDB.macroLegends["RT+A"]
+    assert(melee and #melee.labels == 3 and melee.labels[2] == "Cortar Asas", "RT+A must recognize Wing Clip before Raptor")
+    SlashCmdList.JOAOHUNTERUI("off")
     state.layout = "Other layout"
     JoaoHunterUI.Apply()
     assert(page.LeftShoulderIcon.alpha == 1, "Switching layout must restore original opacity")
@@ -97,6 +118,6 @@ function RunCouchMasterTests()
     assert(SLASH_JOAOHUNTERUI1 == "/jhui" and SLASH_JOAOHUNTERUI2 == "/cmf", "Both commands must remain registered")
     SlashCmdList.JOAOHUNTERUI("off")
     assert(JoaoHunterUIDB.showMacroLegends == false, "The off command must preserve the chosen preference")
-    assert(JoaoHunterUI.version == "2.1.5", "Release version mismatch")
-    return "UI contract checks passed"
+    assert(JoaoHunterUI.version == "2.1.6", "Release version mismatch")
+    return "UI and Patch 0.1 macro legend checks passed"
 end

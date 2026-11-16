@@ -1,0 +1,6 @@
+#showtooltip Tiro de Concussão
+/petattack [harm,nodead]
+/cast [harm,nodead] Investida
+/cast [harm,nodead] Tiro de Concussão
+/cast [harm,nodead] Cortar Asas
+/cast [harm,nodead] !Tiro Automático

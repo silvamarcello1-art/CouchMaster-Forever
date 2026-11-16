@@ -1,5 +1,7 @@
 # Macros do caçador
 
+> **Atenção:** os macros deste guia e do [Patch 0.1](../patches/PATCH-0.1.md) são para a classe **Hunter / Caçador**. As demais classes precisam personalizar seus próprios macros. Não copie nomes de habilidades de Hunter para outra classe.
+
 Os nove textos abaixo foram extraídos da configuração usada no perfil original. Crie-os em `/macro`, mantendo os nomes para que as legendas opcionais reconheçam os quatro ataques de RT. Use o ícone de interrogação e coloque cada macro na barra pelo editor nativo do controle.
 
 **Copie um bloco por macro.** Os nomes das habilidades são do cliente ptBR. Se o seu grimório usar outro nome ou idioma, adapte o texto pelo grimório; as legendas fixas só reconhecem os nomes ptBR documentados.
@@ -47,11 +49,19 @@ Retirar a linha que liga o autocast não o desliga sozinho; ajuste o Rosnar ante
 ```text
 #showtooltip Tiro de Concussão
 /petattack [harm,nodead]
+/cast [harm,nodead] Investida
 /cast [harm,nodead] Tiro de Concussão
+/cast [harm,nodead] Cortar Asas
 /cast [harm,nodead] !Tiro Automático
 ```
 
-Tenta reduzir a velocidade do inimigo, envia o pet e solicita o ataque automático. É um botão útil para ganhar distância. Repetir o macro não elimina a recarga de Concussão.
+**Atualizado no Patch 0.1.** Envia o pet e tenta sua Investida, seguida de Tiro de Concussão e Cortar Asas. O jogo aplica as condições de cada habilidade: Concussão atende ao ataque à distância; Cortar Asas é a tentativa de lentidão corpo a corpo. O pedido de tiro automático permanece.
+
+Esse botão não contém Marca do Caçador. Você pode usá-lo para pedir a Investida sem reaplicar a marca pelo LT + X. As habilidades do caçador continuam tendo seus custos normais; a Investida depende do foco e da recarga do pet.
+
+Na configuração conferida, a Investida do javali exige distância entre 8 e 25 do pet até o inimigo, nas unidades de alcance do cliente. Se o javali já estiver encostado no alvo, ela não sai. Outros ajudantes podem não conhecer essa habilidade. Não há uma tentativa agendada para quando o alcance ou a recarga permitirem: é necessário um novo comando seu.
+
+O ícone principal continua sendo Tiro de Concussão. Repetir o macro não elimina recargas nem permite executar várias habilidades com recarga global ao mesmo tempo. [Texto pronto para copiar](../macros/HX-Lento.txt).
 
 ## RT + Y — HX Picada
 
@@ -86,12 +96,15 @@ O ícone principal permanece **Tiro Arcano**. A alternância visual baseada em r
 ```text
 #showtooltip Golpe do Raptor
 /petattack [harm,nodead]
+/cast [harm,nodead] Cortar Asas
 /startattack [harm,nodead]
 /cast [harm,nodead] !Golpe do Raptor
 /cast [harm,nodead] !Tiro Automático
 ```
 
-Prepara Raptor, solicita ataque básico e mantém o pet atacando. Também pede Tiro Automático, sem desligá-lo por repetição. O disparo só acontece quando as condições normais do jogo permitem.
+**Atualizado no Patch 0.1.** Tenta **Cortar Asas antes do Golpe do Raptor**, para aplicar lentidão quando o inimigo encosta. Solicita ataque básico, mantém o pet atacando e pede Tiro Automático sem desligá-lo por repetição. O disparo só acontece quando as condições normais do jogo permitem.
+
+A ordem das linhas indica a ordem das tentativas; ela não agenda uma sequência automática nem ignora a recarga global. As habilidades só saem quando as regras do cliente permitem e podem exigir outra pressão. O ícone principal permanece **Golpe do Raptor**, mesmo com Cortar Asas incluído antes dele. [Texto pronto para copiar](../macros/HX-Corpo.txt).
 
 Raptor é uma resposta quando o inimigo encosta, não um recurso passivo sempre preparado sem apertar. O macro não se executa sozinho ao detectar um inimigo próximo.
 
