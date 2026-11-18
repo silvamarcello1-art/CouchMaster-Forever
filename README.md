@@ -1,5 +1,7 @@
 # CouchMaster Forever
 
+**[Baixar versão atual — 2.1.9](https://github.com/silvamarcello1-art/CouchMaster-Forever/raw/refs/heads/main/downloads/CouchMaster-Forever-v2.1.9.zip)** · [Como instalar](COMO-INSTALAR.txt)
+
 Uma interface para jogar **WoW Forever no controle**, com botões fáceis de identificar e mais espaço para enxergar o jogo.
 
 ## A interface

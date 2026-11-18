@@ -1,5 +1,12 @@
 # Histórico
 
+## 2.1.9
+
+- Modos TV e notebook, com escolha salva e troca fora de combate.
+- Nomes e barras compactos no notebook, com restauração dos tamanhos de TV.
+- Quadros com vida e porcentagem; guia de rotas reposicionado mais acima.
+- Pacote atualizado com addon, layout e instruções de instalação.
+
 ## 2.1.5 — CouchMaster Forever, edição para compartilhar
 
 - Nome público CouchMaster Forever; pasta e variável `JoaoHunterUI` preservadas por compatibilidade.

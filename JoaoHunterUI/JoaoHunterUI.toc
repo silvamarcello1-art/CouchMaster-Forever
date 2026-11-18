@@ -1,9 +1,9 @@
 ## Interface: 16001
 ## Title: CouchMaster Forever
-## Notes: UI de controle para cacador no layout hihi. Glifos persistentes e legendas fixas opcionais. /cmf
-## Author: Joao
-## Version: 2.1.6
-## OptionalDeps: Blizzard_GamepadActionBars
+## Notes: Interface para controle, simbolos visiveis e modos TV e Notebook.
+## Version: 2.1.9
+## OptionalDeps: Blizzard_GamepadActionBars, Plater, ShortestPathForever
 ## SavedVariables: JoaoHunterUIDB
 JoaoHunterUI.lua
-
+TVReadability.lua
+DisplayModes.lua

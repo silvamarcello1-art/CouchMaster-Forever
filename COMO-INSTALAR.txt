@@ -1,0 +1,22 @@
+COUCHMASTER FOREVER 2.1.9
+
+1. Feche o WoW Forever e extraia este ZIP.
+2. Copie a pasta JoaoHunterUI para World of Warcraft/_forever_/Interface/AddOns/.
+3. Abra o jogo e ative CouchMaster Forever na lista de addons.
+4. Ative a interface nativa de controle nas opções de Gamepad.
+5. No Modo de edição, importe o conteúdo de profiles/hihi-layout.txt.
+   Salve e selecione o layout com o nome hihi.
+6. Digite /jhui e escolha TV ou Notebook. /jhui alternar troca entre eles.
+
+Distribua suas próprias ações nos botões da interface nativa. Este pacote não
+substitui suas habilidades, macros, controles da Steam ou arquivos de conta.
+
+Para os tamanhos das barras sobre os personagens, instale Plater Nameplates
+para Forever separadamente. Para o guia de rotas, instale Shortest Path Forever
+e a dependência ForeverCore separadamente. Os demais addons são opcionais.
+
+Plater: https://www.curseforge.com/wow/addons/plater-nameplates
+Rotas: https://www.curseforge.com/wow/addons/shortest-path-forever
+
+Em combate, a troca de modo aguarda o combate terminar.
+O pacote é uma interface para instalar no WoW Forever; não inclui o jogo.

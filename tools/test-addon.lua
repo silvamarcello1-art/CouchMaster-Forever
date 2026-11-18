@@ -34,6 +34,7 @@ GAMEPAD_SHOULDER_LEFT, GAMEPAD_TRIGGER_LEFT = "LB", "LT"
 GAMEPAD_SHOULDER_RIGHT, GAMEPAD_TRIGGER_RIGHT = "RB", "RT"
 function CreateFrame() return Region() end
 function UnitClass() return "Hunter", state.class end
+function UnitClassBase() local _,class=UnitClass("player");return class end
 function UnitName() error("Public addon must not depend on a character name") end
 function InCombatLockdown() return state.combat end
 function hooksecurefunc() end
@@ -105,7 +106,7 @@ function RunCouchMasterTests()
     assert(page.actionBars.rightBar.actionButtons[5].Name.alpha == 1, "Macro label alpha must restore")
     state.layout, state.class = "hihi", "MAGE"
     JoaoHunterUI.Apply()
-    assert(page.LeftShoulderIcon.alpha == 1, "Other classes must not activate hunter visuals")
+    assert(page.LeftShoulderIcon.alpha == 0, "Shared visuals must activate without a class restriction")
     state.class, state.layout = "HUNTER", nil
     JoaoHunterUI.Apply()
     assert(page.LeftShoulderIcon.alpha == 1, "An absent layout must be safe")
@@ -118,6 +119,6 @@ function RunCouchMasterTests()
     assert(SLASH_JOAOHUNTERUI1 == "/jhui" and SLASH_JOAOHUNTERUI2 == "/cmf", "Both commands must remain registered")
     SlashCmdList.JOAOHUNTERUI("off")
     assert(JoaoHunterUIDB.showMacroLegends == false, "The off command must preserve the chosen preference")
-    assert(JoaoHunterUI.version == "2.1.6", "Release version mismatch")
-    return "UI and Patch 0.1 macro legend checks passed"
+    assert(JoaoHunterUI.version == "2.1.9", "Release version mismatch")
+    return "UI visual checks passed"
 end

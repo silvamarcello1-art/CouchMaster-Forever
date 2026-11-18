@@ -6,9 +6,9 @@ local glyphBars, originalAlpha, petArtwork = {}, {}, {}
 local bottomOriginal, pageRef, pending
 
 local function Enabled()
-    local _, class = UnitClass("player")
+
     local layout = EditModeManagerFrame and EditModeManagerFrame:GetActiveLayoutInfo()
-    return class == "HUNTER" and layout and string.lower(layout.layoutName or "") == "hihi"
+    return layout and string.lower(layout.layoutName or "") == "hihi"
 end
 
 local function Alpha(region, value)
@@ -197,7 +197,7 @@ local function CreateOptionsPanel()
     description:SetPoint("TOPLEFT", 24, -82)
     description:SetWidth(310)
     description:SetJustifyH("LEFT")
-    description:SetText("Legendas fixas para RT + X, Y, B e A.\nA escolha fica salva para as próximas sessões.\n\nAtalho: /cmf ligar ou /cmf desligar")
+    description:SetText("Legendas fixas para RT + X, Y, B e A.\nA escolha fica salva para as próximas sessões.\n\nAtalho: /jhui ligar ou /jhui desligar")
     legendsCheck:SetScript("OnClick", function(self) SetLegendsEnabled(self:GetChecked()) end)
     optionsPanel:SetScript("OnShow", function() legendsCheck:SetChecked(JoaoHunterUIDB.showMacroLegends) end)
     optionsPanel:Hide()
@@ -251,7 +251,7 @@ local function Configure(page)
         Glyphs(actionBar)
     end
     for _, input in pairs(page.ModifierIcons or {}) do input:Show() end
-    if #petArtwork == 0 then
+    if #petArtwork == 0 and (UnitClassBase("player") == "HUNTER" or UnitClassBase("player") == "WARLOCK") then
         PetArtwork(page, page.LeftClassAction, GamepadPetActionFlyout, "Left", -252, GAMEPAD_SHOULDER_LEFT, GAMEPAD_TRIGGER_LEFT)
         PetArtwork(page, page.RightClassAction, GamepadPetSpellFlyout, "Right", 136, GAMEPAD_SHOULDER_RIGHT, GAMEPAD_TRIGGER_RIGHT)
     end
@@ -301,4 +301,22 @@ addon:SetScript("OnEvent", function(_, event, unit, action)
     C_Timer.After(0, Apply)
 end)
 C_Timer.After(0, Apply)
-_G.JoaoHunterUI = {Apply = Apply, version = "2.1.6"}
+_G.JoaoHunterUI = {Apply = Apply, version = "2.1.9"}
+
+-- Personal controller preferences: restore the requested ranges after login.
+-- Uses native CVars only; no targeting actions, spells or bindings are replaced.
+do
+    local function ApplyControllerTargetingPreferences()
+
+        if not Enabled() then return end
+        SetCVar("SoftTargetEnemyRange", "60")
+        SetCVar("SoftTargetFriendRange", "60")
+    end
+    local preferences = CreateFrame("Frame")
+    preferences:RegisterEvent("PLAYER_ENTERING_WORLD")
+    preferences:SetScript("OnEvent", function()
+        C_Timer.After(1, ApplyControllerTargetingPreferences)
+    end)
+    JoaoHunterUI.ApplyControllerTargetingPreferences = ApplyControllerTargetingPreferences
+    C_Timer.After(1, ApplyControllerTargetingPreferences)
+end
