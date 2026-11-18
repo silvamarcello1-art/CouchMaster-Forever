@@ -1,6 +1,6 @@
 # Macros do caçador
 
-> **Atenção:** os macros deste guia e do [Patch 0.1](../patches/PATCH-0.1.md) são para a classe **Hunter / Caçador**. As demais classes precisam personalizar seus próprios macros. Não copie nomes de habilidades de Hunter para outra classe.
+> **Atenção:** os macros deste guia são para a classe **Hunter / Caçador**. As demais classes precisam personalizar seus próprios macros. Não copie nomes de habilidades de Hunter para outra classe.
 
 Os nove textos abaixo foram extraídos da configuração usada no perfil original. Crie-os em `/macro`, mantendo os nomes para que as legendas opcionais reconheçam os quatro ataques de RT. Use o ícone de interrogação e coloque cada macro na barra pelo editor nativo do controle.
 
@@ -55,7 +55,7 @@ Retirar a linha que liga o autocast não o desliga sozinho; ajuste o Rosnar ante
 /cast [harm,nodead] !Tiro Automático
 ```
 
-**Atualizado no Patch 0.1.** Envia o pet e tenta sua Investida, seguida de Tiro de Concussão e Cortar Asas. O jogo aplica as condições de cada habilidade: Concussão atende ao ataque à distância; Cortar Asas é a tentativa de lentidão corpo a corpo. O pedido de tiro automático permanece.
+Envia o pet e tenta sua Investida, seguida de Tiro de Concussão e Cortar Asas. O jogo aplica as condições de cada habilidade: Concussão atende ao ataque à distância; Cortar Asas é a tentativa de lentidão corpo a corpo. O pedido de tiro automático permanece.
 
 Esse botão não contém Marca do Caçador. Você pode usá-lo para pedir a Investida sem reaplicar a marca pelo LT + X. As habilidades do caçador continuam tendo seus custos normais; a Investida depende do foco e da recarga do pet.
 
@@ -102,7 +102,7 @@ O ícone principal permanece **Tiro Arcano**. A alternância visual baseada em r
 /cast [harm,nodead] !Tiro Automático
 ```
 
-**Atualizado no Patch 0.1.** Tenta **Cortar Asas antes do Golpe do Raptor**, para aplicar lentidão quando o inimigo encosta. Solicita ataque básico, mantém o pet atacando e pede Tiro Automático sem desligá-lo por repetição. O disparo só acontece quando as condições normais do jogo permitem.
+Tenta **Cortar Asas antes do Golpe do Raptor**, para aplicar lentidão quando o inimigo encosta. Solicita ataque básico, mantém o pet atacando e pede Tiro Automático sem desligá-lo por repetição. O disparo só acontece quando as condições normais do jogo permitem.
 
 A ordem das linhas indica a ordem das tentativas; ela não agenda uma sequência automática nem ignora a recarga global. As habilidades só saem quando as regras do cliente permitem e podem exigir outra pressão. O ícone principal permanece **Golpe do Raptor**, mesmo com Cortar Asas incluído antes dele. [Texto pronto para copiar](../macros/HX-Corpo.txt).
 

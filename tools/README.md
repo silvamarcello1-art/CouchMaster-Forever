@@ -1,6 +1,6 @@
 # Verificação para manutenção
 
-O arquivo `test-addon.lua` prepara um ambiente mínimo para executar o addon inteiro e conferir a ativação em outro caçador, a restauração ao sair do layout, a preferência inicial das legendas e o reconhecimento dos dois macros do Patch 0.1.
+O arquivo `test-addon.lua` prepara um ambiente mínimo para executar o addon inteiro e conferir a ativação em outro caçador, a restauração ao sair do layout, a preferência inicial das legendas e o reconhecimento dos macros de exemplo.
 
 Na preparação desta versão, a sintaxe foi analisada com **luaparse 0.3.1**, em modo Lua 5.1. O teste isolado rodou com **fengari-web 0.1.4**, carregando nesta ordem:
 

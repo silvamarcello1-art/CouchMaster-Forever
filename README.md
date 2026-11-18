@@ -1,88 +1,31 @@
 # CouchMaster Forever
 
-**Uma interface de caçador pensada para jogar WoW Forever no controle.**
+Uma interface para jogar **WoW Forever no controle**, com botões fáceis de identificar e mais espaço para enxergar o jogo.
 
-Botões fáceis de reconhecer, habilidades próximas da borda inferior e mais espaço para enxergar o mundo. Este projeto reúne o addon visual, o layout **hihi** e um guia em português para reproduzir a configuração com um controle de padrão Xbox, como o 8BitDo usado na montagem original.
+## A interface
 
-![Interface original com as barras do controle, RestedXP à esquerda e Questie à direita](docs/images/ui-em-jogo.jpg)
+- Barras de habilidades próximas da borda inferior.
+- Símbolos do controle visíveis nos botões, inclusive com LT ou RT pressionado.
+- Quadros de personagem e alvo reposicionados para liberar o centro da tela.
+- Indicadores e atalhos alinhados, com menos sobreposição.
+- Guia de direção mais alto, preservando a visão do cenário.
+- Vida e porcentagem visíveis nas barras.
 
-> **Patch 0.1 · WoW Forever · Interface 16001 · Caçador · Português do Brasil**
->
-> A imagem mostra a configuração original em jogo. Os painéis de missões, rotas e bolsas pertencem aos addons opcionais citados no guia; eles são instalados separadamente.
+## TV ou notebook
 
-**[Baixar CouchMaster Forever — Patch 0.1](https://github.com/silvamarcello1-art/CouchMaster-Forever/raw/refs/heads/main/downloads/CouchMaster-Forever-Patch-0.1.zip)**
+**Modo TV:** nomes e barras maiores para jogar à distância.
 
-[Veja o que mudou no Patch 0.1](patches/PATCH-0.1.md) · [Histórico de patches](patches/README.md)
+**Modo Notebook:** nomes menores e barras mais finas para uma tela mais limpa.
 
-## Comece por aqui
+Digite `/jhui` e escolha o modo. A preferência fica salva.
 
-1. Baixe o projeto pelo botão **Code → Download ZIP** do GitHub, ou use o pacote disponibilizado pelo autor.
-2. Com o jogo fechado, copie a pasta **`JoaoHunterUI`** para **`World of Warcraft/_forever_/Interface/AddOns/`**.
-3. Ative **CouchMaster Forever** na lista de addons. O nome da pasta continua `JoaoHunterUI` para manter compatibilidade com a configuração original.
-4. Habilite a interface nativa de controle do Forever. No **Modo de edição**, importe o texto de [profiles/hihi-layout.txt](profiles/hihi-layout.txt), salve o novo layout como **`hihi`** e selecione-o.
-5. Crie os macros pelo menu `/macro` e coloque cada um no botão indicado em [Macros do caçador](docs/MACROS.md). O layout visual não transporta as habilidades das suas barras.
-6. Digite `/cmf` para abrir as opções. Os mini-ícones secundários começam **desligados** em uma instalação nova.
+## Organização recomendada
 
-O addon ativa os ajustes visuais em personagens **caçadores** com o layout chamado **hihi**, sem depender do nome do personagem. Leia a [instalação completa](docs/INSTALACAO.md) antes de substituir uma configuração que você já usa.
+- **LT:** habilidades de apoio e utilidades.
+- **RT:** habilidades principais.
+- **LT + RT:** ações adicionais.
+- **LB:** seleção de aliados.
+- **RB:** seleção de inimigos.
+- **Analógico direito:** câmera e direção do personagem.
 
-## O que muda na tela
-
-| Elemento | Resultado |
-|---|---|
-| Letras X, Y, B e A | Permanecem visíveis nas habilidades, inclusive quando o grupo ativo é destacado. |
-| Nomes dos macros sobre as habilidades | Ficam ocultos para dar lugar aos símbolos do controle. |
-| Grupo central LT + RT | Recebe o ajuste vertical usado na configuração original. |
-| Dois acessos do ajudante | Ganham retratos com as combinações LB + LT e RB + RT abaixo deles. |
-| Indicadores laterais de seleção de alvos | A arte de ombro é ocultada; os comandos nativos continuam existindo. |
-| Mini-ícones dos macros | Legendas fixas opcionais para os quatro ataques de RT. |
-
-A posição dos quadros de vida, mana, alvo, medidor de dano e demais elementos nativos vem do **layout importado**. As janelas de Questie e RestedXP precisam ser ajustadas nas opções desses addons.
-
-## Atalhos principais do perfil
-
-| Controle | Macro | Uso |
-|---|---|---|
-| LT + X | HX Abrir | Enviar o pet, marcar o inimigo e iniciar o ataque; outro toque avança para a lentidão. |
-| RT + X | HX Lento | Investida do javali, Tiro de Concussão e Cortar Asas, com pet e tiro automático. |
-| RT + Y | HX Picada | Picada de Serpente, pet e tiro automático. |
-| RT + B | HX Arcano | Tiro Arcano e tentativa de preparar Golpe do Raptor no mesmo botão. |
-| RT + A | HX Corpo | Cortar Asas antes de Golpe do Raptor, com pet e ataque básico. |
-| LT + → | HX Recuar | Parar o seu ataque, colocar o pet em passivo e fazê-lo seguir. |
-| RT + ↑ | HX Chamar | Chamar ou tentar reviver o ajudante conforme a condição do pet. |
-
-**Esses atalhos são a organização sugerida do perfil, não bindings instalados automaticamente.** Faça a atribuição na interface nativa e confirme os símbolos na sua tela. [Veja os controles e exercícios de familiarização](docs/CONTROLE.md).
-
-## Guias
-
-- [Instalação, importação do layout e primeiro teste](docs/INSTALACAO.md)
-- [Controle, Bluetooth, Steam Input e leitura das barras](docs/CONTROLE.md)
-- [Personalizar tamanho, posição, botões e aparência](docs/PERSONALIZACAO.md)
-- [Todos os macros: código, funcionamento e limites](docs/MACROS.md)
-- [Addons recomendados e configuração de uma tela organizada](docs/ADDONS.md)
-- [Problemas frequentes, atualização e restauração](docs/SOLUCAO-DE-PROBLEMAS.md)
-- [Patches: novidades, correções e instruções de atualização](patches/README.md)
-- [Histórico da versão e verificações](CHANGELOG.md)
-
-## Atualizações conforme a experiência em jogo
-
-Cada patch tem uma página própria, com as mudanças, os botões afetados, a classe atendida, as instruções de aplicação e o que foi verificado. A página inicial aponta para o pacote atual; as notas anteriores permanecem no [histórico de patches](patches/README.md).
-
-O [Patch 0.1](patches/PATCH-0.1.md) reúne as adições de Cortar Asas e da Investida do javali. **Esses macros são para Hunter; jogadores de outras classes precisam personalizar seus próprios macros.** O suporte visual do addon continua restrito a caçadores no layout `hihi`.
-
-## Como o recurso visual funciona
-
-`/cmf ligar` mostra pequenas imagens das ações secundárias reconhecidas nos macros `HX Lento`, `HX Picada`, `HX Arcano` e `HX Corpo`. `/cmf desligar` oculta essas imagens. `/jhui` continua funcionando como atalho alternativo.
-
-As legendas descrevem o conteúdo fixo desses macros. Elas não escolhem a próxima habilidade, não verificam recarga, alcance ou mana e não alternam o ícone principal. A recarga e a indicação de uso do botão continuam sob responsabilidade da interface nativa. Um macro com várias ações pode não mostrar a situação individual de todas elas no ícone principal.
-
-## Compatibilidade e escopo
-
-O visual original foi usado em jogo com caçador de nível baixo e controle 8BitDo via Bluetooth. A edição de distribuição remove o vínculo ao personagem original, mantém o comportamento visual e acrescenta `/cmf`.
-
-O projeto depende dos quadros nativos de controle do **Forever**. Não há suporte verificado para Retail, outras variantes de Classic, outras classes ou interfaces que substituam essas barras. A versão de distribuição passou por análise de sintaxe e testes isolados; a reprodução completa em uma segunda conta continua sendo uma etapa de validação.
-
-## Conteúdo e créditos
-
-Este download contém nosso addon, o layout exportado e a documentação. Os outros addons são indicados por **links dos próprios autores** em [ADDONS.md](docs/ADDONS.md). Não há arquivos de conta, senhas, banco de personagens, configurações completas de WTF, guias pagos ou pacotes de voz incluídos.
-
-Código próprio e documentação sob [licença MIT](LICENSE). Interface, símbolos e imagens do jogo pertencem aos respectivos titulares; os símbolos são reutilizados diretamente do cliente instalado, sem um pacote de texturas separado. Os addons citados mantêm suas próprias licenças.
+Distribua as ações conforme sua preferência e mantenha funções semelhantes nos mesmos botões. O layout foi refinado durante o uso para melhorar a identificação dos comandos e reduzir a ocupação da tela.
